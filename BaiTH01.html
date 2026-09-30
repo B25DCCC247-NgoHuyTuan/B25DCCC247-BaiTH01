@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuan | Sinh viên PTIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="BaiTH01.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#home" class="logo">Tuan</a>
+      <ul class="menu" id="menu">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện sáng/tối">🌙</button>
+        <button class="icon-btn hamburger" id="hamburger" aria-label="Mở menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero container">
+      <div class="hero-text">
+        <p class="hello">Xin chào, mình là</p>
+        <h1>Tuan</h1>
+        <p class="lead">Sinh viên Học viện Công nghệ Bưu chính Viễn thông (PTIT), đang học thiết kế cơ sở dữ liệu, SQL và lập trình web.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn">Xem dự án</a>
+          <a href="#contact" class="btn btn-outline">Liên hệ</a>
+        </div>
+      </div>
+      <dl class="info-card">
+        <div><dt>Trường</dt><dd>PTIT</dd></div>
+        <div><dt>Nơi ở</dt><dd>Việt Nam</dd></div>
+        <div><dt>Đang học</dt><dd>CSDL, SQL, Web</dd></div>
+        <div><dt>GitHub</dt><dd><a href="https://tuansnake.github.io" target="_blank" rel="noopener">tuansnake.github.io</a></dd></div>
+      </dl>
+    </section>
+
+    <section id="about" class="section container reveal">
+      <h2>Giới thiệu</h2>
+      <p>Mình là sinh viên năm học tại PTIT. Mình thích biến một bài toán thành thứ chạy được: vẽ sơ đồ ER, chuyển sang bảng quan hệ, viết SQL, rồi dựng giao diện web để người dùng thao tác.</p>
+      <p>Mục tiêu của mình là viết code gọn, dễ đọc và hiển thị tốt trên cả máy tính, tablet lẫn điện thoại.</p>
+    </section>
+
+    <section id="skills" class="section container reveal">
+      <h2>Kỹ năng</h2>
+      <ul class="skills">
+        <li>HTML5</li><li>CSS3 (Flexbox, Grid)</li><li>JavaScript</li>
+        <li>SQL</li><li>Thiết kế CSDL (ER/RD)</li><li>Git &amp; GitHub</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section container reveal">
+      <h2>Dự án</h2>
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="Tìm dự án theo tên hoặc từ khóa..." aria-label="Tìm dự án">
+        <div class="filters" id="filters">
+          <button class="chip active" data-tag="all">Tất cả</button>
+          <button class="chip" data-tag="web">Web</button>
+          <button class="chip" data-tag="database">Database</button>
+        </div>
+      </div>
+      <div class="grid" id="projectGrid">
+        <article class="card" data-tags="web game" data-title="ptit game">
+          <h3>PTIT Game</h3>
+          <p>Website đánh giá và tin tức game, làm cho môn Ngôn ngữ lập trình kịch bản.</p>
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+        </article>
+        <article class="card" data-tags="database sql" data-title="quản lý bán hàng">
+          <h3>Hệ thống Quản lý bán hàng</h3>
+          <p>Thiết kế CSDL từ mô hình ER, quan hệ (RD) đến cài đặt bằng SQL.</p>
+          <span class="tag">ER/RD</span><span class="tag">SQL</span>
+        </article>
+        <article class="card" data-tags="web portfolio" data-title="trang giới thiệu cá nhân">
+          <h3>Trang giới thiệu cá nhân</h3>
+          <p>Trang web bạn đang xem: responsive, có chế độ sáng/tối và form liên hệ.</p>
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+        </article>
+      </div>
+      <p class="empty" id="empty" hidden>Không có dự án phù hợp. Hãy thử từ khóa khác.</p>
+    </section>
+
+    <section id="contact" class="section container reveal">
+      <h2>Liên hệ</h2>
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Họ và tên</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+          <small class="error" id="nameErr"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+          <small class="error" id="emailErr"></small>
+        </div>
+        <div class="field">
+          <label for="message">Nội dung</label>
+          <textarea id="message" name="message" rows="5" maxlength="300"></textarea>
+          <small class="counter"><span id="count">0</span>/300 ký tự</small>
+          <small class="error" id="messageErr"></small>
+        </div>
+        <button type="submit" class="btn">Gửi tin nhắn</button>
+        <p class="success" id="success" hidden>Đã gửi! Cảm ơn bạn, mình sẽ phản hồi sớm.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Tuan – PTIT. Bài tập thực hành 01.</p>
+      <a href="#home">Lên đầu trang</a>
+    </div>
+  </footer>
+
+  <script src="BaiTH01.js"></script>
+</body>
+</html>
